@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="16c184b1-f67d-4b97-a922-5593c233a2c5" name="VideoCall">
+        <fileTransfer rootFolder="/root/projects/video-call/" accessType="SFTP" host="128.199.170.139" port="22" sshConfigId="6864644f-6c12-41b9-a048-1ad0b40ee01c" sshConfig="root@128.199.170.139:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
