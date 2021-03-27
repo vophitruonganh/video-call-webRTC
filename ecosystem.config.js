@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "API",
-      script: "index.js",
+      script: "./index.js",
       watch: false,
       instances: -1, // 12 CPU - 1 = 11 CPU => 1 node instance
       exec_mode: "cluster",

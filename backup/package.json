@@ -1,0 +1,23 @@
+{
+  "name": "webrtc",
+  "version": "1.0.0",
+  "description": "Build a video call application using webrtc and Pusher",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webRTc",
+    "Pusher",
+    "Videocall"
+  ],
+  "author": "Ogundipe Samuel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.17.1",
+    "peer": "^0.6.1",
+    "pusher": "^1.5.1",
+    "socket.io": "^4.0.0"
+  }
+}
