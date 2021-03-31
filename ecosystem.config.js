@@ -9,6 +9,7 @@ module.exports = {
       node_args: "--max_old_space_size=500",
       max_memory_restart: "2048M",
       env: {
+
         NODE_ENV: process.env.NODE_ENV || "local",
       },
     }

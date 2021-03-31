@@ -61,7 +61,7 @@
     // for remove member from list:
     const index = users.indexOf(member.id);
     users.splice(index, 1);
-    if (member.id == room) {
+    if (member.id === room) {
       endCall();
     }
     render();
@@ -80,8 +80,6 @@
   GetRTCSessionDescription();
   GetRTCIceCandidate();
   prepareCaller();
-
-
 
   function prepareCaller() {
     //Initializing a peer connection
@@ -205,7 +203,7 @@
   }
 
   function toggleEndCallButton() {
-    if (document.getElementById("endCall").style.display == 'block') {
+    if (document.getElementById("endCall").style.display === 'block') {
       document.getElementById("endCall").style.display = 'none';
     } else {
       document.getElementById("endCall").style.display = 'block';

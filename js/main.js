@@ -6,12 +6,12 @@ let peerConnection;
 let remoteStream = new MediaStream();
 let turnReady;
 
-// const localVideo = document.querySelector("#localVideo");
 let remoteVideo = document.querySelector("#remoteVideo");
 
 const pcConfig = {
   iceServers: [{urls: 'turn:turn.tavozone.com:3478?transport=tcp', username: 'truonganh', credential: '12345'}]
 };
+
 
 // Set up audio and video regardless of what devices are present.
 const sdpConstraints = {
@@ -20,28 +20,33 @@ const sdpConstraints = {
 };
 
 const room = "foo";
-const socket = io.connect();
+const socket = io.connect('wss://tavozone.com');
 
+// create room
 if (room !== "") {
   socket.emit("create or join", room);
   console.log("Attempted to create or  join room", room);
 }
 
+// listen event create
 socket.on("created", function (room) {
   console.log("Created room " + room);
   isInitiator = true;
 });
 
+// listen event check room is full
 socket.on("full", function (room) {
   console.log("Room " + room + " is full");
 });
 
+// listen event member join room
 socket.on("join", function (room) {
   console.log("Another peer made a request to join room " + room);
   console.log("This peer is the initiator of room " + room + "!");
   isChannelReady = true;
 });
 
+// listen event member joined
 socket.on("joined", function (room) {
   console.log("joined: " + room);
   isChannelReady = true;
@@ -51,6 +56,7 @@ socket.on("log", function (array) {
   console.log.apply(console, array);
 });
 
+// send message to server
 function sendMessage(message) {
   console.log("Client sending message: ", message);
   socket.emit("message", message);
